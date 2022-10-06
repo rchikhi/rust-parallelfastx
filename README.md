@@ -18,6 +18,10 @@ see `src/main.rs`, should be self explanatory.
 
 Inspiration for this repository is the amazing `fastlwc-mt` tool from https://github.com/expr-fi/fastlwc which does multi-threaded line counting. 
 
+## Caveat
+
+Input file needs to be seekable, which rules out all compression methods except blocked ones, which currently aren't supported by this library, but could be in principle.
+
 ## Author
 
 Rayan Chikhi, 2022
