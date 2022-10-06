@@ -2,7 +2,8 @@
 use memmap::Mmap;
 use seq_io::BaseRecord;
 
-pub fn parallel_fastx(filename: &str, nb_threads: usize, task: &(dyn Fn(&[u8],&str) + 'static  + Sync))
+pub fn parallel_fastx<F>(filename: &str, nb_threads: usize, task: F)
+    where F: Send + Sync + Fn(&[u8],&str)
 {
     let f = std::fs::File::open(filename).expect("Error: file not found");
     let mmap = unsafe { Mmap::map(&f).expect(&format!("Error mapping file {}", filename)) };
@@ -28,6 +29,7 @@ pub fn parallel_fastx(filename: &str, nb_threads: usize, task: &(dyn Fn(&[u8],&s
 
     // Start FASTX parsing threads
     std::thread::scope(|scope|  {// since rust 1.63
+        let task = &task;
         let mut threads = vec![];
         for i in 0..nb_threads {
             // the things rust make us do..
