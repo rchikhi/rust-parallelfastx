@@ -2,7 +2,7 @@
 name = "rust-parallelfastx"
 authors = ["Rayan Chikhi <rayan.chikhi@pasteur.fr>"]
 description = "Parallel iteration of FASTA/FASTQ files, for when sequence order doesn't matter but speed does"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 keywords = ["bioinformatics"]
 categories = ["science", "algorithms"]
