@@ -1,4 +1,3 @@
-#![feature(bench_black_box)]
 use memmap::Mmap;
 use seq_io::BaseRecord;
 
