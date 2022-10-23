@@ -18,7 +18,7 @@ see `src/main.rs`, should be self explanatory.
 
 Inspiration for this repository is the amazing `fastlwc-mt` tool from https://github.com/expr-fi/fastlwc which does multi-threaded line counting faster than `wc`.
 
-A related work on parallel FASTX parsing, I was not aware of at the time of development, is: https://github.com/natir/in_place_fastx
+A related work on parallel FASTX parsing, I was not aware of at the time of development, is: https://github.com/natir/in_place_fastx. See https://github.com/natir/in_place_fastx/issues/1 for a benchmark.
 
 ## Caveat
 
