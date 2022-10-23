@@ -12,5 +12,5 @@ fn main() {
     let start = Instant::now();
     parallel_fastx(filename, nb_threads, &dummy);
     let duration = start.elapsed();
-    println!("FASTQ parsed in {:?}.", duration);
+    println!("FASTX parsed in {:?}.", duration);
 }
